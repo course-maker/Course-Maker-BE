@@ -19,7 +19,7 @@ public class SignUpRequest {
     @Pattern(regexp = "[a-zA-Z가-힣]{2,10}", message = "이름은 2~10자의 영문자, 한글로 구성되어야 합니다.")
     private String name;
 
-    @Schema(description = "닉네임", example = "nickname123")
+    @Schema(description = "닉네임", example = "nickname12")
     @NotNull(message = "닉네임을 입력하세요.")
     @NotBlank(message = "닉네임은 공백 혹은 빈 문자는 허용하지 않습니다.")
     @Pattern(regexp = "[a-z0-9가-힣]{2,10}", message = "닉네임은 2~10자의 영문 소문자, 숫자, 한글로 구성되어야 합니다.")

@@ -17,7 +17,7 @@ public class LoginResponse {
     @Schema(description = "리프레시 토큰", example = "refresh_token_example")
     String refreshToken;
 
-    @Schema
+    @Schema(description = "유저 닉네임", example = "nickname12")
     String nickname;
 }
 

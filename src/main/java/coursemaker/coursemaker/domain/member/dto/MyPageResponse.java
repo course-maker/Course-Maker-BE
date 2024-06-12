@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 public class MyPageResponse {
-    @Schema(description = "닉네임", example = "nickname123")
+    @Schema(description = "닉네임", example = "nickname12")
     String nickname;
 
     @Schema(description = "이름", example = "홍길동")

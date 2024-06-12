@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class ValidateNicknameRequest {
-    @Schema(description = "닉네임", example = "nickname123")
+    @Schema(description = "닉네임", example = "nickname12")
     @NotBlank(message = "닉네임을 입력하세요.")
     private String nickname;
 }
