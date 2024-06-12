@@ -227,7 +227,7 @@ public class TagServiceImpl implements TagService{
                 .select(courseTag, courseTag.course.count())
                 .from(courseTag)// 코스태그에서 선택(코스에는 FK가 없음)
                 .leftJoin(courseTag.course, travelCourse)// 코스-코스태그 조인
-                .where(courseTag.tag.id.in(tagIds))// 다중태그
+                .where(courseTag.tag.id.in(tagIds).and(travelCourse.deletedAt.isNull()))// 다중태그 및 삭제되지 않은 코스 필터링
                 .groupBy(courseTag.course)// 코스로 묶어서
 //                .having(courseTag.course.count().gt(tagIds.size()-1))// 중복된 부분만 추출함
                 .orderBy(orderBySpecifier)// 정렬 조건 설정
@@ -244,7 +244,7 @@ public class TagServiceImpl implements TagService{
                 .select(courseTag, courseTag.course.count())
                 .from(courseTag)// 코스태그에서 선택(코스에는 FK가 없음)
                 .leftJoin(courseTag.course, travelCourse)// 코스-코스태그 조인
-                .where(courseTag.tag.id.in(tagIds))// 다중태그
+                .where(courseTag.tag.id.in(tagIds).and(travelCourse.deletedAt.isNull()))// 다중태그 및 삭제되지 않은 코스 필터링
                 .groupBy(courseTag.course)// 코스로 묶어서
 //                .having(courseTag.course.count().gt(tagIds.size()-1))// 중복된 부분만 추출함
                 .orderBy(orderBySpecifier)// 정렬 조건 설정
