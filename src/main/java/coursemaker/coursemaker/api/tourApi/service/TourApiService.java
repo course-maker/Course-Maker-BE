@@ -2,15 +2,19 @@ package coursemaker.coursemaker.api.tourApi.service;
 
 import coursemaker.coursemaker.api.tourApi.dto.TourApiResponse;
 import coursemaker.coursemaker.api.tourApi.entity.TourApi;
-import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface TourApiService {
 
-    TourApiResponse getTour();
-    //    public List<Tour> getAllTours();
+    TourApiResponse updateAndGetTour();
     Optional<TourApi> getTourById(Long id);
+    List<TourApi> getAllTours();
+    // void updateDisabledTours();
+    void updateTourWithCommonData();
+    void updateTourWithIntroData();
+
 
     // 호진님이 작업하셨었던 코드
 
